@@ -9,10 +9,16 @@ var mongoose = require("mongoose");
 var methodOverride = require("method-override");
 var connectDB = require("./config/db");
 var dotenv = require("dotenv");
+var compression = require("compression");
+var helmet = require("helmet");
+
 var app = express();
 dotenv.config({ path: path.join(__dirname, "config/config.env") });
 
 connectDB();
+app.use(helmet());
+
+app.use(compression());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(
