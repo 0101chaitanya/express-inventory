@@ -1,0 +1,16 @@
+<nav>
+  <ul>
+    <li>
+      <a href="/">
+        Home
+      </a>
+    </li>
+    {{#each nav}}
+      <li>
+        <a href="/{{_id}}">
+          {{name}}
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+</nav>

@@ -1,0 +1,59 @@
+<div class="container">
+  <form method="POST" class="s12 m6 form" action="/{{method}}/{{_id}}">
+
+    {{#if PUT}}
+    <input type="hidden" name="_method" value="PUT" />
+    {{/if}}
+    <div class="row">
+      <div class="input-field">
+        <label for="name">
+          Name:
+        </label>
+        <input name="name" id="name" type="text" value="{{name}}" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <select name="category" id="category">
+          {{#select category._id}}
+          {{#each nav}}
+          <option value="{{_id}}">
+            {{name}}
+          </option>
+          {{/each}}
+          {{/select}}
+        </select>
+        <label for="category">
+          Category:
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <label for="textarea1">
+          Description :
+        </label>
+        <textarea name="description" row="6" textarea id="textarea1" class="materialize-textarea" id="description">
+          {{description}}
+        </textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <label for="price">
+          Price:
+        </label>
+        <input name="price" id="price" type="text" value="{{price}}" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <label for="number_in_stock">
+          No in stock:
+        </label>
+        <input name="number_in_stock" id="number_in_stock" type="text" value="{{number_in_stock}}" />
+      </div>
+    </div>
+    <button class="waves-effect waves-light btn" type="submit">Submit</button>
+  </form>
+</div>
